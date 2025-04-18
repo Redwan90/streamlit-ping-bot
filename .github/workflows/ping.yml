@@ -1,0 +1,22 @@
+name: Keep Streamlit Apps Awake
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'  # Every 30 minutes (UTC)
+  workflow_dispatch:        # Manual trigger option
+
+jobs:
+  wake-apps:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wake up qubahan.streamlit.app
+        run: curl --silent https://qubahan.streamlit.app || echo "App might be sleeping"
+
+      - name: Wake up scholarship-finder-ai.streamlit.app
+        run: curl --silent https://scholarship-finder-ai.streamlit.app || echo "App might be sleeping"
+
+      - name: Wake up research-ai-checker.streamlit.app
+        run: curl --silent https://research-ai-checker.streamlit.app || echo "App might be sleeping"
+
+      - name: Wake up journaltemplatechecker.streamlit.app
+        run: curl --silent https://journaltemplatechecker.streamlit.app || echo "App might be sleeping"
