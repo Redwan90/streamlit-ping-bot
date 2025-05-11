@@ -20,3 +20,6 @@ jobs:
 
       - name: Wake up journaltemplatechecker.streamlit.app
         run: curl --silent https://journaltemplatechecker.streamlit.app || echo "App might be sleeping"
+      
+      - name: Wake up journaltemplatechecker.streamlit.app
+        run: curl --silent https://fujece-template.streamlit.app || echo "App might be sleeping"
